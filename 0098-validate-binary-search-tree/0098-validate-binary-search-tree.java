@@ -16,19 +16,17 @@
 class Solution {
     TreeNode prev = null;
     public boolean isValidBST(TreeNode node) {
-        boolean result = true;
+        
         if(node == null){
             return true;
         }
 
-        result = result && isValidBST(node.left);
-        if(prev!=null && prev.val >= node.val){
+        boolean result = isValidBST(node.left);
+        if(result && prev!=null && prev.val >= node.val){
             result = false;
         }
         prev = node;
-        result = result &&isValidBST(node.right);
-        
-        return result;
+        return result && isValidBST(node.right);
         
     }
 }
