@@ -27,7 +27,6 @@ class Solution {
         path.add(node.val);
         
         if(node.right == null && node.left == null){
-            System.out.println(path);
             if(targetSum == 0){
                 paths.add(new ArrayList<>(path));
             }
